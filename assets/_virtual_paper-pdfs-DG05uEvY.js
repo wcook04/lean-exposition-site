@@ -1,0 +1,1 @@
+var e={long:{path:`pdf/long-record.pdf`,pages:76},short:{path:`pdf/short-paper.pdf`,pages:15},expository:{path:`pdf/exposition.pdf`,pages:21},architecture:{path:`pdf/architecture.pdf`,pages:8}};export{e as t};

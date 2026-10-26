@@ -8,7 +8,9 @@ Sherrington–Kirkpatrick spin glass: every minimising Parisi order parameter
 increases across every interval in [0, 1). It has three written accounts of
 the proof (an exposition, a short paper and a long record), each readable on
 the site or as a PDF in `pdf/`, an argument map of the records the proof
-uses, and the checks recorded for them.
+uses, and the checks recorded for them. The architectural companion explains
+why these accounts share one record; read it on the About page or in
+`pdf/architecture.pdf`.
 
 The mathematics comes from OpenAI's mathematics release, family 281:
 https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/281.md

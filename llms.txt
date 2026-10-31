@@ -1,0 +1,25 @@
+# Why the SK order parameter has no gaps
+
+> One theorem from OpenAI's mathematics release, family 281: every minimiser of the zero-temperature Parisi functional for the pure zero-field Sherrington-Kirkpatrick model has full support on [0,1). The site holds OpenAI's Lean beside three written accounts, and one graph of 131 records joins them.
+
+Each paper is a narrower part of the same graph. Papers and records are drafts; no independent mathematical review has been done. Lean links are authored pointers, and a program checks only that each one still lands.
+
+## Read
+
+- [Exposition](https://wcook04.github.io/lean-exposition-site/pdf/exposition.pdf): objects and ideas, from a calculation with two spins
+- [Short paper](https://wcook04.github.io/lean-exposition-site/pdf/short-paper.pdf): the result and proof for specialists
+- [Long record](https://wcook04.github.io/lean-exposition-site/pdf/long-record.pdf): each step with its source, continuing to the QAOA circuits
+- [Architectural companion](https://wcook04.github.io/lean-exposition-site/pdf/architecture.pdf): why the accounts share one record
+
+## Data
+
+All data is static JSON under https://wcook04.github.io/lean-exposition-site/edition/. Start at edition/index.json: it maps API routes to files, and `route_maps` holds further maps for per-module and per-record routes.
+
+- [Record alignment](https://wcook04.github.io/lean-exposition-site/edition/alignment.json): for each record, its short title, Lean declarations with relation, and exact statement slices in each paper, plus a dictionary from Lean names to the papers' notation
+- edition/lean/: the Lean index, one file per module with source, declarations and name references. References come from the source text and are not elaborated.
+- The route "/graph" in edition/index.json: the whole recorded graph, with typed edges running from consumer to prerequisite
+
+## Source
+
+- [Repository](https://github.com/wcook04/lean-exposition): papers, records, tools and this website
+- [Web API](https://github.com/wcook04/lean-exposition/blob/main/docs/web-api.md): routes and field meanings

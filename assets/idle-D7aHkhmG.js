@@ -1,0 +1,2 @@
+function e(e,t){if(typeof window.requestIdleCallback==`function`){let n=window.requestIdleCallback(e,{timeout:t});return()=>window.cancelIdleCallback(n)}let n=setTimeout(e,Math.min(t,200));return()=>clearTimeout(n)}export{e as t};
+//# sourceMappingURL=idle-D7aHkhmG.js.map

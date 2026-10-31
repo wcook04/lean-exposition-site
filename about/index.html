@@ -3,11 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Why the SK order parameter has no gaps: the argument and its three accounts</title>
+    <title>Why the SK order parameter has no gaps: the argument from Lean to exposition</title>
     <meta
       name="description"
-      content="Why a minimising Parisi order parameter of the zero-temperature Sherrington–Kirkpatrick spin glass has no gaps: the proof in three written accounts, with its steps linked to the passages that discuss them and to the checks recorded for them."
+      content="Why a minimising Parisi order parameter of the zero-temperature Sherrington–Kirkpatrick spin glass has no gaps: OpenAI's Lean beside three written accounts, where any step of the argument can be compared across the levels, with the checks recorded for it."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Why the SK order parameter has no gaps" />
+    <meta
+      property="og:description"
+      content="OpenAI's Lean proof beside three written accounts, where any step of the argument can be compared across the levels."
+    />
+    <meta property="og:url" content="https://wcook04.github.io/lean-exposition-site/" />
+    <meta property="og:image" content="https://wcook04.github.io/lean-exposition-site/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="describedby" href="/lean-exposition-site/llms.txt" type="text/plain" />
     <meta name="author" content="Will Cook" />
     <meta name="theme-color" content="#f8f0e2" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#1c1526" media="(prefers-color-scheme: dark)" />
@@ -20,16 +32,16 @@
         } catch (e) {}
       })();
     </script>
-    <script type="module" crossorigin src="/lean-exposition-site/assets/index-lCoBAIaa.js"></script>
-    <link rel="modulepreload" crossorigin href="/lean-exposition-site/assets/documents-BUyRzayI.js">
-    <link rel="stylesheet" crossorigin href="/lean-exposition-site/assets/index-BpGLeqR6.css">
-  </head>
+    <script type="module" crossorigin src="/lean-exposition-site/assets/index-CQYoXn7a.js"></script>
+    <link rel="modulepreload" crossorigin href="/lean-exposition-site/assets/router-DRlZTaFT.js">
+    <link rel="stylesheet" crossorigin href="/lean-exposition-site/assets/index-Cw6AHRWo.css">
+  <link rel="preload" href="/lean-exposition-site/assets/source-sans-3-latin-wght-normal-Bo_j9asI.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/lean-exposition-site/assets/stix-two-text-latin-400-normal-Dm29J5Fl.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/lean-exposition-site/assets/stix-two-text-latin-500-normal-QKEzPprE.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/lean-exposition-site/edition/index.json" as="fetch" crossorigin /></head>
   <body>
-    <div id="root"></div>
+    <div id="root"><div class="app"><header class="topbar"><span class="fam-lockup"><a class="fam-lockup__home" href="https://wcook04.github.io/" rel="author" title="All of Will Cook's websites and films"><img src="/lean-exposition-site/plectis.svg" alt="Will Cook: all websites and films" width="26" height="26" /></a><span class="fam-lockup__rule" aria-hidden="true"></span><a class="fam-lockup__site" href="/lean-exposition-site/" aria-label="Lean Exposition, front page"><svg viewBox="0 0 32 32" aria-hidden="true" class="wordmark__mark"><path d="M4 27 L4 5 M4 27 L28 27" fill="none" stroke-width="2" stroke-linecap="round"></path><path d="M5 26 C10 22 13 17 16 14 C19 11 22 9 27 6" fill="none" stroke-width="2.6" stroke-linecap="round"></path><circle cx="16" cy="14" r="3"></circle></svg><span class="fam-lockup__name" translate="no">Lean Exposition</span></a></span><nav class="topnav" aria-label="Main"><a class="topnav__job" href="/lean-exposition-site/map">Map</a><a class="topnav__job" href="/lean-exposition-site/compare">Compare</a><a class="topnav__job" href="/lean-exposition-site/read/expository">Read</a><a class="topnav__job" href="/lean-exposition-site/lean">Lean</a><a class="topnav__job" href="/lean-exposition-site/checks">Checks</a></nav></header><main id="main" class="app__main"></main></div></div>
     <noscript>
       <p style="max-width: 40rem; margin: 4rem auto; font-family: Georgia, serif; line-height: 1.6">
-        This reading site draws the argument map and the papers in the browser and needs JavaScript. The papers are also
-        available as Markdown and PDF in the repository under <code>papers/qaoa-sk/</code>.
+        The argument map, the papers and the comparisons on this site are drawn in the browser and need JavaScript. The
+        papers are also available as Markdown and PDF in the repository under <code>papers/qaoa-sk/</code>.
       </p>
     </noscript>
   </body>

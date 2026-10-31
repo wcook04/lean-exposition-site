@@ -1,16 +1,16 @@
-# Why the SK order parameter has no gaps
+# Why the Sherrington–Kirkpatrick order parameter has no gaps
 
 This repository holds the built reading website published at
 https://wcook04.github.io/lean-exposition-site/.
 
 The website presents one theorem about the zero-temperature
 Sherrington–Kirkpatrick spin glass: every minimising Parisi order parameter
-increases across every interval in [0, 1). It has three written accounts of
+increases across every interval in [0, 1). It has three papers on
 the proof (an exposition, a short paper and a long record), each readable on
 the site or as a PDF in `pdf/`. A statement with a dark tick in a paper opens its
 Lean beside the text, and the site also has an argument map of the steps the
-proof uses, an index of the Lean, and the checks recorded for them. The architectural companion explains
-why these accounts share one record; read it on the About page or in
+proof uses, an index of the Lean, and the test runs recorded for them. The architectural companion explains
+why these papers share one graph; read it on the About page or in
 `pdf/architecture.pdf`.
 
 The mathematics comes from OpenAI's mathematics release, family 281:

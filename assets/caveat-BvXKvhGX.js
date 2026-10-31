@@ -1,2 +1,0 @@
-var e=`scalar.formal_model_transport_open`,t=`An AI agent read the two and linked them. No independent mathematician has reviewed this, and no program checks that they say the same thing.`;export{e as n,t};
-//# sourceMappingURL=caveat-BvXKvhGX.js.map

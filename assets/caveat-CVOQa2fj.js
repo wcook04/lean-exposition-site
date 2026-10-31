@@ -1,0 +1,2 @@
+var e=`scalar.formal_model_transport_open`,t=`An AI agent read each statement and its Lean and linked them. No independent mathematician has reviewed these links, and no program tests whether the two say the same thing.`;export{e as n,t};
+//# sourceMappingURL=caveat-CVOQa2fj.js.map

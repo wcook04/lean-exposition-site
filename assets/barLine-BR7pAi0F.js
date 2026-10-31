@@ -1,0 +1,2 @@
+import{t as e}from"./react-DHsaPJjs.js";import{c as t}from"./index-ClOIkuiV.js";var n=e(),r=null,i=0;function a(){let[e,a]=(0,n.useState)(r);return(0,n.useLayoutEffect)(()=>{let e=document.getElementById(t);if(e)return i+=1,r||(r=document.createElement(`div`),r.className=`lean-slot lean-slot--compact lean-slot--bar`,e.append(r)),a(r),()=>{--i,i===0&&(r?.remove(),r=null)}},[]),e}export{a as t};
+//# sourceMappingURL=barLine-BR7pAi0F.js.map

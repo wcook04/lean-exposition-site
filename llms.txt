@@ -2,7 +2,9 @@
 
 > One theorem from OpenAI's mathematics release, family 281: every minimiser of the zero-temperature Parisi functional for the pure zero-field Sherrington-Kirkpatrick model has full support on [0,1). The site holds OpenAI's Lean beside three written accounts, and one graph of 131 records joins them.
 
-Each paper is a narrower part of the same graph. Papers and records are drafts; no independent mathematical review has been done. Lean links are authored pointers, and a program checks only that each one still lands.
+Each paper is a narrower part of the same graph. Papers and records are drafts; no independent mathematical review has been done. Ties between the papers and the Lean are authored pointers: agents read both sides, and a program confirms only that each one still lands.
+
+Lean v4.34.1 compiled OAI.Probability.SKSupport.Main (`lake build OAI.Probability.SKSupport.Main`, exit 0) at OpenAI revision adc7f12, recorded 26 October 2026. Lean's extraction lists these axioms for OAI.ZeroTemperatureSK.full_support: propext, Classical.choice, Quot.sound. The theorem assumes a minimiser. Comparator has accepted neither main statement, and the scalar value result has no successful build on record.
 
 ## Read
 
@@ -15,8 +17,10 @@ Each paper is a narrower part of the same graph. Papers and records are drafts; 
 
 All data is static JSON under https://wcook04.github.io/lean-exposition-site/edition/. Start at edition/index.json: it maps API routes to files, and `route_maps` holds further maps for per-module and per-record routes.
 
-- [Record alignment](https://wcook04.github.io/lean-exposition-site/edition/alignment.json): for each record, its short title, Lean declarations with relation, and exact statement slices in each paper, plus a dictionary from Lean names to the papers' notation
-- edition/lean/: the Lean index, one file per module with source, declarations and name references. References come from the source text and are not elaborated.
+- The route "/alignment": for each record, its short title, Lean declarations with relation and exact `lines`, and exact statement slices in each paper, each slice with the Lean it means; a dictionary from Lean names to the papers' notation; `names`, plain titles for 511 declarations
+- The routes "/ties/short", "/ties/long" and "/ties/expository": non-overlapping byte ranges of each paper, each with its ties to records and Lean lines (1,010 marked statements, 803 with Lean, in 1,152 ties). A tie is a pointer that landed, not a check that two texts mean the same thing.
+- The reference tables behind the papers' links to theorems, equations, sections, figures and citations (765 links), in examples/qaoa-sk/alignment/references-*.json in the repository
+- The routes "/lean/modules", "/lean/names" and "/lean/module": the Lean index (349 modules, 3,458 declarations at v4.34.1), one file per module with source, declarations and name references. Dependencies come from the source text and are not elaborated.
 - The route "/graph" in edition/index.json: the whole recorded graph, with typed edges running from consumer to prerequisite
 
 ## Source

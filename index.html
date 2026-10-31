@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Why the SK order parameter has no gaps: the argument from Lean to exposition</title>
+    <title>Why the SK order parameter has no gaps</title>
     <meta
       name="description"
-      content="Why a minimising Parisi order parameter of the zero-temperature Sherrington–Kirkpatrick spin glass has no gaps: OpenAI's Lean beside three written accounts, where any step of the argument can be compared across the levels, with the checks recorded for it."
+      content="Why a minimising Parisi order parameter of the zero-temperature Sherrington–Kirkpatrick spin glass has no gaps. Read three papers on the proof: a statement with a dark tick opens OpenAI's Lean beside the text, and the graph of the proof follows as you scroll."
     />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Why the SK order parameter has no gaps" />
     <meta
       property="og:description"
-      content="OpenAI's Lean proof beside three written accounts, where any step of the argument can be compared across the levels."
+      content="Read a paper on this theorem as you would any paper: a statement with a dark tick opens OpenAI's Lean beside the text, and the graph of the proof follows as you scroll."
     />
     <meta property="og:url" content="https://wcook04.github.io/lean-exposition-site/" />
     <meta property="og:image" content="https://wcook04.github.io/lean-exposition-site/og.png" />
@@ -32,18 +32,20 @@
         } catch (e) {}
       })();
     </script>
-    <script type="module" crossorigin src="/lean-exposition-site/assets/index-B3GZvbcZ.js"></script>
-    <link rel="modulepreload" crossorigin href="/lean-exposition-site/assets/router-DGzyf5o_.js">
-    <link rel="stylesheet" crossorigin href="/lean-exposition-site/assets/index-Cw6AHRWo.css">
+    <script type="module" crossorigin src="/lean-exposition-site/assets/index-CarAiZ0O.js"></script>
+    <link rel="modulepreload" crossorigin href="/lean-exposition-site/assets/react-DHsaPJjs.js">
+    <link rel="modulepreload" crossorigin href="/lean-exposition-site/assets/router-TGImeYNr.js">
+    <link rel="modulepreload" crossorigin href="/lean-exposition-site/assets/client-DdolYWEa.js">
+    <link rel="stylesheet" crossorigin href="/lean-exposition-site/assets/index-Cwh1Bba-.css">
   <link rel="preload" href="/lean-exposition-site/assets/source-sans-3-latin-wght-normal-Bo_j9asI.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/lean-exposition-site/assets/stix-two-text-latin-400-normal-Dm29J5Fl.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/lean-exposition-site/assets/stix-two-text-latin-500-normal-QKEzPprE.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/lean-exposition-site/edition/index.json" as="fetch" crossorigin /></head>
   <body>
-    <div id="root"><!--first-screen--><div class="app"><header class="topbar"><span class="fam-lockup"><a class="fam-lockup__home" href="https://wcook04.github.io/" rel="author" title="All of Will Cook's websites and films"><img src="/lean-exposition-site/plectis.svg" alt="Will Cook: all websites and films" width="26" height="26" /></a><span class="fam-lockup__rule" aria-hidden="true"></span><a class="fam-lockup__site" href="/lean-exposition-site/" aria-label="Lean Exposition, front page"><svg viewBox="0 0 32 32" aria-hidden="true" class="wordmark__mark"><path d="M4 27 L4 5 M4 27 L28 27" fill="none" stroke-width="2" stroke-linecap="round"></path><path d="M5 26 C10 22 13 17 16 14 C19 11 22 9 27 6" fill="none" stroke-width="2.6" stroke-linecap="round"></path><circle cx="16" cy="14" r="3"></circle></svg><span class="fam-lockup__name" translate="no">Lean Exposition</span></a></span><nav class="topnav" aria-label="Main"><a class="topnav__job" href="/lean-exposition-site/map">Map</a><a class="topnav__job" href="/lean-exposition-site/compare">Compare</a><a class="topnav__job" href="/lean-exposition-site/read/expository">Read</a><a class="topnav__job" href="/lean-exposition-site/lean">Lean</a><a class="topnav__job" href="/lean-exposition-site/checks">Checks</a></nav></header><main id="main" class="app__main"><div class="front"><section class="front__hero" aria-labelledby="front-title">
+    <div id="root"><!--first-screen--><div class="app"><header class="topbar"><span class="fam-lockup"><a class="fam-lockup__home" href="https://wcook04.github.io/" rel="author" title="All of Will Cook's websites and films"><img src="/lean-exposition-site/plectis.svg" alt="Will Cook: all websites and films" width="26" height="26" /></a><span class="fam-lockup__rule" aria-hidden="true"></span><a class="fam-lockup__site" href="/lean-exposition-site/" aria-label="Lean Exposition, front page"><svg viewBox="0 0 32 32" aria-hidden="true" class="wordmark__mark"><path d="M4 27 L4 5 M4 27 L28 27" fill="none" stroke-width="2" stroke-linecap="round"></path><path d="M5 26 C10 22 13 17 16 14 C19 11 22 9 27 6" fill="none" stroke-width="2.6" stroke-linecap="round"></path><circle cx="16" cy="14" r="3"></circle></svg><span class="fam-lockup__name" translate="no">Lean Exposition</span></a></span><nav class="topnav" aria-label="Main"><a class="topnav__job" href="/lean-exposition-site/read/short">Read</a><a class="topnav__job" href="/lean-exposition-site/map">Map</a><a class="topnav__job" href="/lean-exposition-site/compare">Compare</a><a class="topnav__job" href="/lean-exposition-site/checks">Checks</a><a class="topnav__job topnav__job--quiet" href="/lean-exposition-site/lean">Lean index</a></nav></header><main id="main" class="app__main"><div class="front"><section class="front__hero" aria-labelledby="front-title">
 <div class="front__intro">
 <h1 id="front-title" class="front__title">Why the SK order parameter has no gaps</h1>
 <p class="front__lede">Parisi’s formula gives the largest energy per spin in the Sherrington–Kirkpatrick spin glass as a minimum over nondecreasing functions, called order parameters. A minimising order parameter increases across every interval in [0, 1), and its derivative is positive between 0&nbsp;and&nbsp;1.</p>
-<p class="front__site">OpenAI released a proof written in Lean, a language a computer can check. Here the same argument runs from that Lean through three papers, and any step can be compared across them.</p>
-<p class="front__actions"><a class="front__primary" href="/lean-exposition-site/read/expository">Read the exposition</a><a class="front__secondary" href="/lean-exposition-site/compare">Compare Lean and papers</a></p>
-<p class="front__tertiary"><a href="/lean-exposition-site/map">Open the argument map</a></p>
+<p class="front__site">OpenAI released a proof written in Lean, a language a computer can check. Read a paper here as you would any paper. Click a statement with a dark tick in the margin and its Lean opens beside the text, and the graph of the proof follows as you scroll.</p>
+<p class="front__actions"><a class="front__primary" href="/lean-exposition-site/read/short">Read the short paper</a><a class="front__secondary" href="/lean-exposition-site/read/expository">Read the exposition</a></p>
+<p class="front__tertiary"><a href="/lean-exposition-site/read/short?l=b5970-6319&n=full_support#main-result">Theorem 1 with its Lean open</a><a href="/lean-exposition-site/compare">Compare Lean and papers</a><a href="/lean-exposition-site/map">The argument map</a></p>
 </div>
 <figure class="rosetta">
 <table class="rosetta__table">
@@ -72,12 +74,12 @@
 </tr>
 </tbody>
 </table>
-<figcaption class="rosetta__foot"><a href="/lean-exposition-site/compare?n=full_support">Compare the whole theorem, its proof and its definitions</a></figcaption>
+<figcaption class="rosetta__foot"><a href="/lean-exposition-site/compare?n=full_support">Compare the whole theorem, its proof and its definitions</a><p class="rosetta__models">This Lean is OpenAI’s full-support model. Its value theorem is in a separate model, and no Lean theorem connects the two, so combining them in Lean <a href="/lean-exposition-site/map?n=scalar.formal_model_transport_open">needs that connection first</a>.</p></figcaption>
 </figure>
 </section></div></main></div><!--/first-screen--></div>
     <noscript>
       <p style="max-width: 40rem; margin: 4rem auto; font-family: Georgia, serif; line-height: 1.6">
-        The argument map, the papers and the comparisons on this site are drawn in the browser and need JavaScript. The
+        The papers, the Lean beside them, the argument map and the comparisons on this site are drawn in the browser and need JavaScript. The
         papers are also available as Markdown and PDF in the repository under <code>papers/qaoa-sk/</code>.
       </p>
     </noscript>

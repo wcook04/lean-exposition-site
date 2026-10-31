@@ -7,8 +7,9 @@ The website presents one theorem about the zero-temperature
 Sherrington–Kirkpatrick spin glass: every minimising Parisi order parameter
 increases across every interval in [0, 1). It has three written accounts of
 the proof (an exposition, a short paper and a long record), each readable on
-the site or as a PDF in `pdf/`, an argument map of the records the proof
-uses, and the checks recorded for them. The architectural companion explains
+the site or as a PDF in `pdf/`. A statement with a dark tick in a paper opens its
+Lean beside the text, and the site also has an argument map of the steps the
+proof uses, an index of the Lean, and the checks recorded for them. The architectural companion explains
 why these accounts share one record; read it on the About page or in
 `pdf/architecture.pdf`.
 

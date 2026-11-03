@@ -18,8 +18,8 @@ Lean v4.34.1 compiled OAI.Probability.SKSupport.Main (`lake build OAI.Probabilit
 All data is static JSON under https://wcook04.github.io/lean-exposition-site/edition/. Start at edition/index.json: it maps API routes to files, and `route_maps` holds further maps for per-module and per-record routes.
 
 - The route "/alignment": for each record, its short title, Lean declarations with relation and exact `lines`, and exact statement slices in each paper, each slice with the Lean it means; a dictionary from Lean names to the papers' notation; `names`, plain titles for 511 declarations
-- The routes "/ties/short", "/ties/long" and "/ties/expository": non-overlapping byte ranges of each paper, each with its ties to records and Lean lines (1,010 marked statements, 803 with Lean, in 1,152 ties). A tie is a pointer. No program tests whether the two texts mean the same thing.
-- The reference tables behind the papers' links to theorems, equations, sections, figures and citations (765 links), in examples/qaoa-sk/alignment/references-*.json in the repository
+- The routes "/ties/short", "/ties/long" and "/ties/expository": non-overlapping byte ranges of each paper, each with its ties to records and Lean lines (1,002 marked statements, 799 with Lean, in 1,152 ties). A tie is a pointer. No program tests whether the two texts mean the same thing.
+- The reference tables behind the papers' links to theorems, equations, sections, figures and citations (781 links), in examples/qaoa-sk/alignment/references-*.json in the repository
 - The routes "/lean/modules", "/lean/names" and "/lean/module": the Lean index (349 modules, 3,458 declarations at v4.34.1), one file per module with source, declarations and name references. Dependencies come from the source text and are not elaborated.
 - The route "/graph" in edition/index.json: the whole recorded graph, with typed edges running from consumer to prerequisite
 

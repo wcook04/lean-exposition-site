@@ -1,4 +1,4 @@
-# Lean Exposition website
+# SK Reader website
 
 Read a mathematical paper with the exact Lean statement beside the paragraph
 that describes it. Lean is a language for writing statements and proofs that a

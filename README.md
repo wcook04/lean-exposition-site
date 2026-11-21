@@ -29,7 +29,7 @@ gives the exact scope of the Lean and the recorded checks.
 | [Lean index](https://wcook04.github.io/lean-exposition-site/lean/) · [What ran](https://wcook04.github.io/lean-exposition-site/checks/) | The named statements in the Lean code and recorded check results |
 | [About](https://wcook04.github.io/lean-exposition-site/about/) | A paper explaining how the website connects the papers to the proof steps |
 
-A statement with a dark tick opens its Lean beside the paper.
+Each phrase that a Lean declaration states is underlined in the colour of its topic and opens that Lean beside the paper, with a plain title, a comparison with the phrase and an AI-drafted reading note.
 The three explanations and the paper under About are also available in [PDF](pdf/).
 [Plectis Atlas](https://wcook04.github.io/plectis-atlas/families/281.html)
 lists the same OpenAI manuscripts and Lean files.

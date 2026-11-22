@@ -1,129 +1,52 @@
 <!doctype html>
-<html lang="en" data-view="home">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Why the Sherrington–Kirkpatrick order parameter has no gaps</title>
-    <meta
-      name="description"
-      content="Why a minimising Parisi order parameter of the zero-temperature Sherrington–Kirkpatrick spin glass has no gaps. Read three papers on the proof: an underlined phrase opens the OpenAI Lean that states it beside the text, and a graph of the proof moves to the statement you are reading."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Why the Sherrington–Kirkpatrick order parameter has no gaps" />
-    <meta
-      property="og:description"
-      content="Read a paper on this theorem as you would any paper: an underlined phrase opens the OpenAI Lean that states it beside the text, and a graph of the proof moves to the statement you are reading."
-    />
-    <meta property="og:url" content="https://wcook04.github.io/lean-exposition-site/" />
-    <meta property="og:image" content="https://wcook04.github.io/lean-exposition-site/og.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="describedby" href="/lean-exposition-site/llms.txt" type="text/plain" />
-    <meta name="author" content="Will Cook" />
-    <meta name="theme-color" content="#f8f0e2" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#1c1526" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" href="/lean-exposition-site/favicon.svg" type="image/svg+xml" />
-    <script>
-      (function () {
-        try {
-          var stored = localStorage.getItem("lx-theme");
-          if (stored === "light" || stored === "dark") document.documentElement.setAttribute("data-theme", stored);
-        } catch (e) {}
-      })();
-    </script>
-    <script type="module" crossorigin src="/lean-exposition-site/assets/index-Cmk9i97x.js"></script>
-    <link rel="modulepreload" crossorigin href="/lean-exposition-site/assets/react-DHsaPJjs.js">
-    <link rel="modulepreload" crossorigin href="/lean-exposition-site/assets/router-DBF0J1ue.js">
-    <link rel="modulepreload" crossorigin href="/lean-exposition-site/assets/site-Bmgv_Gor.js">
-    <link rel="stylesheet" crossorigin href="/lean-exposition-site/assets/index-C9XUC3Uy.css">
-  <link rel="preload" href="/lean-exposition-site/assets/source-sans-3-latin-wght-normal-Bo_j9asI.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/lean-exposition-site/assets/stix-two-text-latin-400-normal-Dm29J5Fl.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/lean-exposition-site/assets/stix-two-text-latin-500-normal-QKEzPprE.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/lean-exposition-site/edition/index.json" as="fetch" crossorigin /></head>
-  <body>
-    <div id="root"><!--first-screen--><div class="app"><header class="topbar"><span class="fam-lockup"><a class="fam-lockup__home" href="https://wcook04.github.io/" rel="author" title="All of Will Cook's websites and videos"><img src="/lean-exposition-site/plectis.svg" alt="" width="26" height="26" /><span class="fam-lockup__owner" translate="no">Will Cook</span></a><span class="fam-lockup__rule" aria-hidden="true"></span><a class="fam-lockup__site" href="/lean-exposition-site/" aria-label="SK Reader, front page"><svg viewBox="0 0 32 32" aria-hidden="true" class="wordmark__mark"><path d="M4 27 L4 5 M4 27 L28 27" fill="none" stroke-width="2" stroke-linecap="round"></path><path d="M5 26 C10 22 13 17 16 14 C19 11 22 9 27 6" fill="none" stroke-width="2.6" stroke-linecap="round"></path><circle cx="16" cy="14" r="3"></circle></svg><span class="fam-lockup__name" translate="no">SK Reader</span></a></span><nav class="topnav" aria-label="Main"><a class="topnav__job" href="/lean-exposition-site/read/short">Read</a><a class="topnav__job" href="/lean-exposition-site/map">Map</a><a class="topnav__job" href="/lean-exposition-site/compare">Compare</a><a class="topnav__job" href="/lean-exposition-site/checks">What ran</a><a class="topnav__job topnav__job--quiet" href="/lean-exposition-site/lean">Lean index</a></nav></header><main id="main" class="app__main"><div class="front"><section class="front__hero" aria-labelledby="front-title">
-<div class="front__intro">
-<p class="front__what">Three papers on OpenAI’s proof of a spin-glass theorem, read beside its Lean proof and a graph of the argument</p>
-<h1 id="front-title" class="front__title">Why the Sherrington–Kirkpatrick order parameter has no gaps</h1>
-<p class="front__lede">Parisi’s formula gives the largest energy per spin in the Sherrington–Kirkpatrick (SK) spin glass as a minimum over nondecreasing functions, called order parameters. A gap is an interval on which an order parameter stays flat. A minimising order parameter has none: it increases across every interval in [0, 1), and its derivative is positive between 0&nbsp;and&nbsp;1.</p>
-<p class="front__actions"><a class="front__primary" href="/lean-exposition-site/read/short">Read the short paper</a><a class="front__secondary" href="/lean-exposition-site/read/expository">Read the exposition</a></p>
-<p class="front__made">Made by <a href="/lean-exposition-site/about#made-by">Will Cook</a> using AI. The proof and its Lean are OpenAI’s. Hong-Bin Chen first proved that a minimising order parameter has no gaps, in a <a href="https://arxiv.org/abs/2607.18032">July 2026 paper</a>; OpenAI’s proof is quantitative and also gives a positive derivative. Lean is a programming language whose compiler rejects a proof with a wrong step.</p>
-</div>
-<figure class="shots">
-<div class="shots__tabs" role="radiogroup" aria-label="Pictures of this website in use"><label class="shots__tab"><input type="radio" name="front-shot" value="follow" checked /><span>Paper and graph</span></label><label class="shots__tab"><input type="radio" name="front-shot" value="tick" /><span>A statement and its Lean</span></label><label class="shots__tab"><input type="radio" name="front-shot" value="card" /><span>A card and its step</span></label><label class="shots__tab"><input type="radio" name="front-shot" value="compare" /><span>Compare</span></label><label class="shots__tab"><input type="radio" name="front-shot" value="checks" /><span>What ran</span></label></div>
-<div class="shots__frame">
-<a class="shots__pic shots__pic--follow" href="/lean-exposition-site/read/expository" tabindex="-1" aria-label="Open the exposition, the view in this picture"><img class="shots__img shots__img--light" src="/lean-exposition-site/stills/tour-follow-light-1440.webp" srcset="/lean-exposition-site/stills/tour-follow-light-1440.webp 1440w, /lean-exposition-site/stills/tour-follow-light-2880.webp 2880w" sizes="(min-width: 68.75em) 58vw, 100vw" alt="The exposition open at its third section. On the graph beside it, three cards are outlined in amber." width="1440" height="790" loading="lazy" decoding="async" /><img class="shots__img shots__img--dark" src="/lean-exposition-site/stills/tour-follow-dark-1440.webp" srcset="/lean-exposition-site/stills/tour-follow-dark-1440.webp 1440w, /lean-exposition-site/stills/tour-follow-dark-2880.webp 2880w" sizes="(min-width: 68.75em) 58vw, 100vw" alt="The exposition open at its third section. On the graph beside it, three cards are outlined in amber." width="1440" height="790" loading="lazy" decoding="async" /></a>
-<a class="shots__pic shots__pic--tick" href="/lean-exposition-site/read/short?l=b5715-6075&n=full_support#main-result" tabindex="-1" aria-label="Open this statement, the view in this picture"><img class="shots__img shots__img--light" src="/lean-exposition-site/stills/tour-tick-light-1440.webp" srcset="/lean-exposition-site/stills/tour-tick-light-1440.webp 1440w, /lean-exposition-site/stills/tour-tick-light-2880.webp 2880w" sizes="(min-width: 68.75em) 58vw, 100vw" alt="The short paper open at Theorem 1, with the theorem highlighted. Beside it is OpenAI’s Lean for the theorem, with the lines of its statement highlighted." width="1440" height="790" loading="lazy" decoding="async" /><img class="shots__img shots__img--dark" src="/lean-exposition-site/stills/tour-tick-dark-1440.webp" srcset="/lean-exposition-site/stills/tour-tick-dark-1440.webp 1440w, /lean-exposition-site/stills/tour-tick-dark-2880.webp 2880w" sizes="(min-width: 68.75em) 58vw, 100vw" alt="The short paper open at Theorem 1, with the theorem highlighted. Beside it is OpenAI’s Lean for the theorem, with the lines of its statement highlighted." width="1440" height="790" loading="lazy" decoding="async" /></a>
-<a class="shots__pic shots__pic--card" href="/lean-exposition-site/read/expository?n=support.diffusion" tabindex="-1" aria-label="Open this step, the view in this picture"><img class="shots__img shots__img--light" src="/lean-exposition-site/stills/tour-card-light-1440.webp" srcset="/lean-exposition-site/stills/tour-card-light-1440.webp 1440w, /lean-exposition-site/stills/tour-card-light-2880.webp 2880w" sizes="(min-width: 68.75em) 58vw, 100vw" alt="The exposition at its passage on the controlled diffusion, highlighted. Beside it is the Lean definition IsDiffusion, with its lines highlighted." width="1440" height="790" loading="lazy" decoding="async" /><img class="shots__img shots__img--dark" src="/lean-exposition-site/stills/tour-card-dark-1440.webp" srcset="/lean-exposition-site/stills/tour-card-dark-1440.webp 1440w, /lean-exposition-site/stills/tour-card-dark-2880.webp 2880w" sizes="(min-width: 68.75em) 58vw, 100vw" alt="The exposition at its passage on the controlled diffusion, highlighted. Beside it is the Lean definition IsDiffusion, with its lines highlighted." width="1440" height="790" loading="lazy" decoding="async" /></a>
-<a class="shots__pic shots__pic--compare" href="/lean-exposition-site/compare?n=full_support" tabindex="-1" aria-label="Open Compare at the main theorem, the view in this picture"><img class="shots__img shots__img--light" src="/lean-exposition-site/stills/tour-compare-light-1440.webp" srcset="/lean-exposition-site/stills/tour-compare-light-1440.webp 1440w, /lean-exposition-site/stills/tour-compare-light-2880.webp 2880w" sizes="(min-width: 68.75em) 58vw, 100vw" alt="The Compare page at the main theorem: a column with its Lean statement, a column of passages from the long record and a column of passages from the short paper." width="1440" height="790" loading="lazy" decoding="async" /><img class="shots__img shots__img--dark" src="/lean-exposition-site/stills/tour-compare-dark-1440.webp" srcset="/lean-exposition-site/stills/tour-compare-dark-1440.webp 1440w, /lean-exposition-site/stills/tour-compare-dark-2880.webp 2880w" sizes="(min-width: 68.75em) 58vw, 100vw" alt="The Compare page at the main theorem: a column with its Lean statement, a column of passages from the long record and a column of passages from the short paper." width="1440" height="790" loading="lazy" decoding="async" /></a>
-<a class="shots__pic shots__pic--checks" href="/lean-exposition-site/checks" tabindex="-1" aria-label="Open What ran, the view in this picture"><img class="shots__img shots__img--light" src="/lean-exposition-site/stills/tour-checks-light-1440.webp" srcset="/lean-exposition-site/stills/tour-checks-light-1440.webp 1440w, /lean-exposition-site/stills/tour-checks-light-2880.webp 2880w" sizes="(min-width: 68.75em) 58vw, 100vw" alt="The What ran page: a table with rows for the Lean compile, the statement, the axioms, any sorry and Comparator. Each row has what ran with its result, and what that leaves open." width="1440" height="790" loading="lazy" decoding="async" /><img class="shots__img shots__img--dark" src="/lean-exposition-site/stills/tour-checks-dark-1440.webp" srcset="/lean-exposition-site/stills/tour-checks-dark-1440.webp 1440w, /lean-exposition-site/stills/tour-checks-dark-2880.webp 2880w" sizes="(min-width: 68.75em) 58vw, 100vw" alt="The What ran page: a table with rows for the Lean compile, the statement, the axioms, any sorry and Comparator. Each row has what ran with its result, and what that leaves open." width="1440" height="790" loading="lazy" decoding="async" /></a>
-</div>
-<figcaption class="shots__caps">
-<p class="shots__cap shots__cap--follow">Beside each paper is a graph of its argument, with a card for each step. As the paper scrolls, the cards for the passage on screen are outlined in amber. <a href="/lean-exposition-site/read/expository">Open the exposition</a></p>
-<p class="shots__cap shots__cap--tick">A reader has clicked Theorem 1 of the short paper. The Lean has opened at the lines that state the theorem, and the paper has not moved. <a href="/lean-exposition-site/read/short?l=b5715-6075&n=full_support#main-result">Open this statement</a></p>
-<p class="shots__cap shots__cap--card">A reader has clicked the card “Controlled diffusion exists uniquely” on the graph. The paper has moved to the passage that states the step, and the Lean for the step has opened beside it. <a href="/lean-exposition-site/read/expository?n=support.diffusion">Open this step</a></p>
-<p class="shots__cap shots__cap--compare">On the Compare page, the Lean for one step is set beside the passages on that step in the papers. <a href="/lean-exposition-site/compare?n=full_support">Open Compare at the main theorem</a></p>
-<p class="shots__cap shots__cap--checks">On the What ran page, each recorded run is listed with its result, and beside each result is what it leaves open. <a href="/lean-exposition-site/checks">Open What ran</a></p>
-</figcaption>
-</figure>
-<div class="front__watch" id="videos" role="group" aria-label="Videos">
-<figure class="film-slot front__lead">
-<a class="film-slot__frame" href="https://www.youtube.com/watch?v=27oL5tMEkH4" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1"><img src="/lean-exposition-site/films/short-sk-website-640.webp" srcset="/lean-exposition-site/films/short-sk-website-640.webp 640w, /lean-exposition-site/films/short-sk-website-1280.webp 1280w" sizes="(max-width: 37.5em) 100vw, 300px" alt="" width="1280" height="720" decoding="async" fetchpriority="high" /><span class="film-slot__play"></span><span class="film-slot__time">1:32</span></a>
-<figcaption class="film-slot__caption"><p class="front__kicker">This website in use</p><p class="film-slot__title"><a href="https://www.youtube.com/watch?v=27oL5tMEkH4" target="_blank" rel="noopener noreferrer">Lean Exposition: Open the Lean proof of OpenAI's spin-glass theorem<span class="sr-only">, video on YouTube, 1 minute 32 seconds</span></a></p></figcaption>
-</figure>
-<div class="front__others">
-<figure class="film-slot film-slot--small front__minor">
-<a class="film-slot__frame" href="https://www.youtube.com/watch?v=IUAhxUriDVw" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1"><img src="/lean-exposition-site/films/sk-no-gap-v3-640.webp" srcset="/lean-exposition-site/films/sk-no-gap-v3-640.webp 640w, /lean-exposition-site/films/sk-no-gap-v3-1280.webp 1280w" sizes="160px" alt="" width="1280" height="720" decoding="async" loading="lazy" /><span class="film-slot__play"></span><span class="film-slot__time">12:28</span></a>
-<figcaption class="film-slot__caption"><p class="front__kicker">The result explained</p><p class="film-slot__title"><a href="https://www.youtube.com/watch?v=IUAhxUriDVw" target="_blank" rel="noopener noreferrer">Spin glasses: How different can two near-best magnet arrangements be?<span class="sr-only">, video on YouTube, 12 minutes 28 seconds</span></a></p></figcaption>
-</figure>
-<figure class="film-slot film-slot--small front__minor">
-<a class="film-slot__frame" href="https://www.youtube.com/watch?v=qLqea5st6Bo" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1"><img src="/lean-exposition-site/films/short-sk-no-gap-640.webp" srcset="/lean-exposition-site/films/short-sk-no-gap-640.webp 640w, /lean-exposition-site/films/short-sk-no-gap-1280.webp 1280w" sizes="160px" alt="" width="1280" height="720" decoding="async" loading="lazy" /><span class="film-slot__play"></span><span class="film-slot__time">1:38</span></a>
-<figcaption class="film-slot__caption"><p class="front__kicker">The result in brief</p><p class="film-slot__title"><a href="https://www.youtube.com/watch?v=qLqea5st6Bo" target="_blank" rel="noopener noreferrer">Spin glasses: Two near-best arrangements with about half their arrows different<span class="sr-only">, video on YouTube, 1 minute 38 seconds</span></a></p></figcaption>
-</figure>
-</div>
-</div>
-</section>
-<section class="front__theorem" aria-labelledby="front-clauses">
-<div class="front__theorem-words">
-<h2 id="front-clauses" class="front__clauses-title">Theorem 1, clause by clause</h2>
-<p class="front__site">OpenAI’s proof of the increase is written in Lean, a programming language whose compiler rejects a proof with a wrong step; the positive derivative is proved in OpenAI’s manuscript and is not in the Lean. In a paper here, each phrase that a Lean declaration states is underlined in the colour of its topic. Click one and that Lean opens beside the text, with a plain title, whether the Lean states the same as the phrase, more or less, and a reading note drafted by an AI agent. A graph of the proof beside the paper moves to the statement you are reading.</p>
-<p class="front__guide-link"><a href="/lean-exposition-site/read/short?l=b5715-6075&n=full_support#main-result">Theorem 1 with its Lean open</a></p>
-<p class="rosetta__models">This Lean is OpenAI’s full-support model. OpenAI’s value theorem is in a separate model, and no Lean theorem connects the two, so combining them in Lean <a href="/lean-exposition-site/map?n=scalar.formal_model_transport_open">needs that connection first</a>.</p>
-<p class="front__limit">The three papers have 707 marked statements, 707 of them with Lean. An AI agent read each statement and its Lean and linked them. No independent mathematician has reviewed these links, and no program tests whether the two say the same thing.</p>
-</div>
-<figure class="rosetta">
-<table class="rosetta__table">
-<caption class="visually-hidden">The main theorem, clause by clause: OpenAI’s Lean statement beside Theorem 1 of the short paper.</caption>
-<thead><tr><th scope="col">In OpenAI’s Lean</th><th scope="col">In the short paper, Theorem 1</th></tr></thead>
-<tbody>
-<tr class="rosetta__row">
-<td class="rosetta__lean"><code translate="no">(<span class="lean-t lean-t--name">hmin</span> <span class="lean-t lean-t--op">:</span> <span class="lean-t lean-t--type">IsMinimizer</span> <span class="lean-t lean-t--type">W</span> γ)</code></td>
-<td class="rosetta__math"><a class="rosetta__formula" href="/lean-exposition-site/compare?n=assumptions.full_support_minimizer" aria-label="Compare this clause across the levels"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7335em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0556em;">γ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathcal" style="margin-right:0.0993em;">U</span><span class="mord text"><span class="mord"> minimises </span></span><span class="mord mathcal" style="margin-right:0.0822em;">P</span></span></span></span></a><span class="rosetta__words">The hypothesis. That a minimiser exists is a separate input.</span></td>
-</tr>
-<tr class="rosetta__row">
-<td class="rosetta__lean"><code translate="no">μ.<span class="lean-t lean-t--name">support</span> <span class="lean-t lean-t--op">=</span> <span class="lean-t lean-t--type">Set</span>.<span class="lean-t lean-t--name">univ</span></code></td>
-<td class="rosetta__math"><a class="rosetta__formula" href="/lean-exposition-site/compare?n=support.full_relative_support" aria-label="Compare this clause across the levels"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mop"><span class="mord mathrm">supp</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">μ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0556em;">γ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></a><span class="rosetta__words">Full support. In Lean, Set.univ is all of Time, the interval [0, 1).</span></td>
-</tr>
-<tr class="rosetta__row">
-<td class="rosetta__lean"><code translate="no"><span class="lean-t lean-t--op">∀</span> a b <span class="lean-t lean-t--op">:</span> <span class="lean-t lean-t--type">Time</span><span class="lean-t lean-t--op">,</span> a <span class="lean-t lean-t--op">&#60;</span> b <span class="lean-t lean-t--op">→</span> γ.<span class="lean-t lean-t--name">val</span> a <span class="lean-t lean-t--op">&#60;</span> γ.<span class="lean-t lean-t--name">val</span> b</code></td>
-<td class="rosetta__math"><a class="rosetta__formula" href="/lean-exposition-site/compare?n=support.strict_increase" aria-label="Compare this clause across the levels"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0556em;">γ</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0556em;">γ</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:1em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.7651em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.7651em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></a><span class="rosetta__words">Strict increase, the same inequality written the other way round.</span></td>
-</tr>
-<tr class="rosetta__row">
-<td class="rosetta__lean"><code translate="no"><span class="lean-t lean-t--name">squareMoment</span> <span class="lean-t lean-t--type">W</span> γ <span class="lean-t lean-t--type">X</span> t <span class="lean-t lean-t--op">=</span> (t <span class="lean-t lean-t--op">:</span> <span class="lean-t lean-t--type">ℝ</span>)</code></td>
-<td class="rosetta__math"><a class="rosetta__formula" href="/lean-exposition-site/compare?n=support.moment_saturation" aria-label="Compare this clause across the levels"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">q</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span></span></span></span></a><span class="rosetta__words">The square moment of the gradient along the diffusion equals time.</span></td>
-</tr>
-<tr class="rosetta__row">
-<td class="rosetta__lean"><code translate="no">(<span class="lean-t lean-t--op">∫</span> ω<span class="lean-t lean-t--op">,</span> (<span class="lean-t lean-t--name">curvature</span> <span class="lean-t lean-t--type">W</span> γ t (<span class="lean-t lean-t--type">X</span> (<span class="lean-t lean-t--type">Real</span>.<span class="lean-t lean-t--name">toNNReal</span> t) ω))^2 <span class="lean-t lean-t--op">∂</span><span class="lean-t lean-t--type">W</span>.<span class="lean-t lean-t--name">law</span>) <span class="lean-t lean-t--op">=</span> 1</code></td>
-<td class="rosetta__math"><a class="rosetta__formula" href="/lean-exposition-site/compare?n=support.moment_saturation" aria-label="Compare this clause across the levels"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathbb">E</span><span class="mopen">[</span><span class="mord mathnormal">a</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></a><span class="rosetta__words">The curvature moment, with the expectation written as an integral.</span></td>
-</tr>
-</tbody>
-</table>
-<figcaption class="rosetta__foot"><a href="/lean-exposition-site/compare?n=full_support">Compare the whole theorem, its proof and its definitions</a></figcaption>
-</figure>
-</section></div></main></div><!--/first-screen--></div>
-    <noscript>
-      <p style="max-width: 40rem; margin: 4rem auto; font-family: Georgia, serif; line-height: 1.6">
-        The papers, the Lean beside them, the argument map and the comparisons on this site are drawn in the browser and need JavaScript. The
-        papers are also available as Markdown and PDF in the repository under <code>papers/qaoa-sk/</code>.
-      </p>
-    </noscript>
-  </body>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SK Reader has moved to the library</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://wcook04.github.io/library/qaoa-sk/">
+<script>
+function libraryAddress(T, path, search, hash) {
+  var p = path.indexOf(T.old_base) === 0 ? path.slice(T.old_base.length) : path.replace(/^\/+/, "");
+  p = p.replace(/index\.html$/, "").replace(/\/+$/, "");
+  var q = new URLSearchParams(search);
+  var map = ["g", "n", "t", "lens", "e"].some(function (k) { return q.has(k); });
+  if (p === "") {
+    // The old front page: with map parameters it was the map; its own sections moved to About.
+    if (map) return T.new + "map/" + search + hash;
+    if (hash && hash.length > 1) return T.new + "about/" + search;
+    return T.new + search;
+  }
+  var read = p.match(/^read\/(long|short|expository)$/);
+  if (read) {
+    // A passage opened beside another keeps the reader's own route, which the library serves too.
+    if (q.has("beside")) return T.new + "read/" + read[1] + "/" + search + hash;
+    return T.new + T.pages[read[1]] + search + hash;
+  }
+  if (T.views.indexOf(p) >= 0) return T.new + p + "/" + search + hash;
+  // Any other address keeps its path under the library paper: a file keeps its name, a route its slash.
+  return T.new + p + (/\.[A-Za-z0-9]+$/.test(p) ? "" : "/") + search + hash;
+}
+(function () {
+  var T = {"old_base": "/lean-exposition-site/", "new": "https://wcook04.github.io/library/qaoa-sk/", "pages": {"short": "", "long": "record/", "expository": "exposition/"}, "views": ["map", "compare", "lean", "checks", "about", "search"]};
+  location.replace(libraryAddress(T, location.pathname, location.search, location.hash));
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=https://wcook04.github.io/library/qaoa-sk/"></noscript>
+<meta http-equiv="refresh" content="1; url=https://wcook04.github.io/library/qaoa-sk/">
+<style>
+:root { color-scheme: light dark; --ink: #1d1d1b; --page: #fbfaf7; --link: #1f4f8f; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e9e6df; --page: #161614; --link: #8db4ec; } }
+body { margin: 0; padding: 48px 16px; background: var(--page); color: var(--ink); font: 18px/1.5 Georgia, "Times New Roman", serif; }
+main { max-width: 34em; margin: 0 auto; }
+a { color: var(--link); overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<main>
+<p>SK Reader is now read in Will Cook's library.</p>
+<p><a href="https://wcook04.github.io/library/qaoa-sk/">https://wcook04.github.io/library/qaoa-sk/</a></p>
+</main>
+</body>
 </html>

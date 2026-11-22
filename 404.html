@@ -1,50 +1,52 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Page not found · SK Reader</title>
-    <meta
-      name="description"
-      content="Why a minimising Parisi order parameter of the zero-temperature Sherrington–Kirkpatrick spin glass has no gaps. Read three papers on the proof: an underlined phrase opens the OpenAI Lean that states it beside the text, and a graph of the proof moves to the statement you are reading."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Why the Sherrington–Kirkpatrick order parameter has no gaps" />
-    <meta
-      property="og:description"
-      content="Read a paper on this theorem as you would any paper: an underlined phrase opens the OpenAI Lean that states it beside the text, and a graph of the proof moves to the statement you are reading."
-    />
-    <meta property="og:url" content="https://wcook04.github.io/lean-exposition-site/" />
-    <meta property="og:image" content="https://wcook04.github.io/lean-exposition-site/og.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="describedby" href="/lean-exposition-site/llms.txt" type="text/plain" />
-    <meta name="author" content="Will Cook" />
-    <meta name="theme-color" content="#f8f0e2" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#1c1526" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" href="/lean-exposition-site/favicon.svg" type="image/svg+xml" />
-    <script>
-      (function () {
-        try {
-          var stored = localStorage.getItem("lx-theme");
-          if (stored === "light" || stored === "dark") document.documentElement.setAttribute("data-theme", stored);
-        } catch (e) {}
-      })();
-    </script>
-    <script type="module" crossorigin src="/lean-exposition-site/assets/index-Cmk9i97x.js"></script>
-    <link rel="modulepreload" crossorigin href="/lean-exposition-site/assets/react-DHsaPJjs.js">
-    <link rel="modulepreload" crossorigin href="/lean-exposition-site/assets/router-DBF0J1ue.js">
-    <link rel="modulepreload" crossorigin href="/lean-exposition-site/assets/site-Bmgv_Gor.js">
-    <link rel="stylesheet" crossorigin href="/lean-exposition-site/assets/index-C9XUC3Uy.css">
-  <link rel="preload" href="/lean-exposition-site/assets/source-sans-3-latin-wght-normal-Bo_j9asI.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/lean-exposition-site/assets/stix-two-text-latin-400-normal-Dm29J5Fl.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/lean-exposition-site/assets/stix-two-text-latin-500-normal-QKEzPprE.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/lean-exposition-site/edition/index.json" as="fetch" crossorigin /></head>
-  <body>
-    <div id="root"><div class="app"><header class="topbar"><span class="fam-lockup"><a class="fam-lockup__home" href="https://wcook04.github.io/" rel="author" title="All of Will Cook's websites and videos"><img src="/lean-exposition-site/plectis.svg" alt="" width="26" height="26" /><span class="fam-lockup__owner" translate="no">Will Cook</span></a><span class="fam-lockup__rule" aria-hidden="true"></span><a class="fam-lockup__site" href="/lean-exposition-site/" aria-label="SK Reader, front page"><svg viewBox="0 0 32 32" aria-hidden="true" class="wordmark__mark"><path d="M4 27 L4 5 M4 27 L28 27" fill="none" stroke-width="2" stroke-linecap="round"></path><path d="M5 26 C10 22 13 17 16 14 C19 11 22 9 27 6" fill="none" stroke-width="2.6" stroke-linecap="round"></path><circle cx="16" cy="14" r="3"></circle></svg><span class="fam-lockup__name" translate="no">SK Reader</span></a></span><nav class="topnav" aria-label="Main"><a class="topnav__job" href="/lean-exposition-site/read/short">Read</a><a class="topnav__job" href="/lean-exposition-site/map">Map</a><a class="topnav__job" href="/lean-exposition-site/compare">Compare</a><a class="topnav__job" href="/lean-exposition-site/checks">What ran</a><a class="topnav__job topnav__job--quiet" href="/lean-exposition-site/lean">Lean index</a></nav></header><main id="main" class="app__main"></main></div></div>
-    <noscript>
-      <p style="max-width: 40rem; margin: 4rem auto; font-family: Georgia, serif; line-height: 1.6">
-        The papers, the Lean beside them, the argument map and the comparisons on this site are drawn in the browser and need JavaScript. The
-        papers are also available as Markdown and PDF in the repository under <code>papers/qaoa-sk/</code>.
-      </p>
-    </noscript>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SK Reader has moved to the library</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://wcook04.github.io/library/qaoa-sk/">
+<script>
+function libraryAddress(T, path, search, hash) {
+  var p = path.indexOf(T.old_base) === 0 ? path.slice(T.old_base.length) : path.replace(/^\/+/, "");
+  p = p.replace(/index\.html$/, "").replace(/\/+$/, "");
+  var q = new URLSearchParams(search);
+  var map = ["g", "n", "t", "lens", "e"].some(function (k) { return q.has(k); });
+  if (p === "") {
+    // The old front page: with map parameters it was the map; its own sections moved to About.
+    if (map) return T.new + "map/" + search + hash;
+    if (hash && hash.length > 1) return T.new + "about/" + search;
+    return T.new + search;
+  }
+  var read = p.match(/^read\/(long|short|expository)$/);
+  if (read) {
+    // A passage opened beside another keeps the reader's own route, which the library serves too.
+    if (q.has("beside")) return T.new + "read/" + read[1] + "/" + search + hash;
+    return T.new + T.pages[read[1]] + search + hash;
+  }
+  if (T.views.indexOf(p) >= 0) return T.new + p + "/" + search + hash;
+  // Any other address keeps its path under the library paper: a file keeps its name, a route its slash.
+  return T.new + p + (/\.[A-Za-z0-9]+$/.test(p) ? "" : "/") + search + hash;
+}
+(function () {
+  var T = {"old_base": "/lean-exposition-site/", "new": "https://wcook04.github.io/library/qaoa-sk/", "pages": {"short": "", "long": "record/", "expository": "exposition/"}, "views": ["map", "compare", "lean", "checks", "about", "search"]};
+  location.replace(libraryAddress(T, location.pathname, location.search, location.hash));
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=https://wcook04.github.io/library/qaoa-sk/"></noscript>
+<meta http-equiv="refresh" content="1; url=https://wcook04.github.io/library/qaoa-sk/">
+<style>
+:root { color-scheme: light dark; --ink: #1d1d1b; --page: #fbfaf7; --link: #1f4f8f; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e9e6df; --page: #161614; --link: #8db4ec; } }
+body { margin: 0; padding: 48px 16px; background: var(--page); color: var(--ink); font: 18px/1.5 Georgia, "Times New Roman", serif; }
+main { max-width: 34em; margin: 0 auto; }
+a { color: var(--link); overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<main>
+<p>SK Reader is now read in Will Cook's library.</p>
+<p><a href="https://wcook04.github.io/library/qaoa-sk/">https://wcook04.github.io/library/qaoa-sk/</a></p>
+</main>
+</body>
 </html>
